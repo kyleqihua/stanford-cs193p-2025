@@ -11,7 +11,10 @@ struct ContentView: View {
 
     func pegs(colors: Array<Color>) -> some View {
         HStack {
-
+            Circle().foregroundStyle(colors[0])
+            Circle().foregroundStyle(colors[1])
+            Circle().foregroundStyle(colors[2])
+            Circle().foregroundStyle(colors[3])
         }
     }
 
