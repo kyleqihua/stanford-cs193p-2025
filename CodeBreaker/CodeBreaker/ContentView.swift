@@ -9,18 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(alignment: .center, spacing: 50, content: greetings)
-        .padding()
-    }
-    
-    @ViewBuilder
-    func greetings() -> some View {
+        VStack(alignment: .center, spacing: 50) {
         Image(systemName: "globe")
             .imageScale(.large)
             .foregroundStyle(.tint)
         Text("Hello, world!")
         Circle()
     }
+        .padding()
+    }
+
 }
 
 #Preview {
