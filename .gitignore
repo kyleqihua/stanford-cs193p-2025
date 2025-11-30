@@ -1,0 +1,22 @@
+# Course materials (copyright protection)
+course/
+
+# Claude Code configuration (personal file)
+CLAUDE.md
+
+# macOS system files
+.DS_Store
+*.swp
+
+# Xcode user-specific data
+xcuserdata/
+*.xcuserdatad
+*.xcuserstate
+
+# Build artifacts
+build/
+DerivedData/
+
+# Other
+*.log
+.env
