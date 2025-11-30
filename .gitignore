@@ -1,9 +1,3 @@
-# Course materials (copyright protection)
-course/
-
-# Claude Code configuration (personal file)
-CLAUDE.md
-
 # macOS system files
 .DS_Store
 *.swp
