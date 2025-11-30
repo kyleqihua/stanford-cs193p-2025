@@ -9,23 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
 
-    struct MatchMarkers: View {
-        var body: some View {
-            HStack {
-                VStack {
-                    Circle().fill().opacity(0)
-                    Circle()
-                        .strokeBorder(.primary, lineWidth: 2)
-                        .aspectRatio(1, contentMode: .fit)
-                }
-                VStack {
-                    Circle()
-                    Circle()
-                }
-            }
-        }
-    }
-
     func pegs(colors: Array<Color>) -> some View {
         HStack {
             ForEach(colors.indices, id: \.self) { index in
