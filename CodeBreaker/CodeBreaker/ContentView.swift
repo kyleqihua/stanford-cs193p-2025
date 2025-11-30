@@ -9,14 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
 
-    func pegs(colors: Array<Color>) -> some View {
-        HStack {
-            ForEach(colors.indices, id: \.self) { index in
-                RoundedRectangle(cornerRadius: 5)
-                    .aspectRatio(1, contentMode: .fit)
-                    .foregroundStyle(colors[index])
-            }
-
+    struct MatchMarkers: View {
+        var body: some View {
             HStack {
                 VStack {
                     Circle().fill().opacity(0)
@@ -29,6 +23,17 @@ struct ContentView: View {
                     Circle()
                 }
             }
+        }
+    }
+
+    func pegs(colors: Array<Color>) -> some View {
+        HStack {
+            ForEach(colors.indices, id: \.self) { index in
+                RoundedRectangle(cornerRadius: 5)
+                    .aspectRatio(1, contentMode: .fit)
+                    .foregroundStyle(colors[index])
+            }
+            MatchMarkers()
         }
     }
 
