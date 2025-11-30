@@ -6,10 +6,15 @@
 xcuserdata/
 *.xcuserdatad
 *.xcuserstate
+*.xcworkspace/xcuserdata/
 
 # Build artifacts
 build/
 DerivedData/
+
+# Swift Package Manager
+.swiftpm/
+.build/
 
 # Other
 *.log
