@@ -8,25 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    var pegs: some View {
+
+    func pegs(colors: Array<Color>) -> some View {
         HStack {
-            Circle()
-                .foregroundStyle(.red)
-            Circle()
-                .foregroundStyle(.green)
-            Circle()                
-                .foregroundStyle(.green)
-            Circle()
-                .foregroundStyle(.yellow)
-        }        
+
+        }
     }
 
     var body: some View {
         VStack {
-            pegs
-            pegs
-            pegs
-            pegs
+            pegs(colors: [.red, .green, .green, .yellow])
+            pegs(colors: [.blue, .blue, .red, .red])
         }
         .padding()   
     }
