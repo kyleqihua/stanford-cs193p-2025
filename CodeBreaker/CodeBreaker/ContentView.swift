@@ -19,8 +19,10 @@ struct ContentView: View {
 
             HStack {
                 VStack {
+                    Circle().fill().opacity(0)
                     Circle()
-                    Circle() 
+                        .strokeBorder(.primary, lineWidth: 2)
+                        .aspectRatio(1, contentMode: .fit)
                 }
                 VStack {
                     Circle()
