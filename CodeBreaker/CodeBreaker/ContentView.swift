@@ -11,11 +11,16 @@ struct ContentView: View {
     var body: some View {
         VStack {
         Image(systemName: "globe")
-            .imageScale(.large)
-            .foregroundStyle(.tint)
+            .font(.largeTitle)
         Text("Hello, world!")
+            .font(.title)
+            .foregroundStyle(.green)
+            .background(.red)
+            .padding()
         Circle()
     }
+        .font(.caption)
+        .foregroundStyle(.yellow)
         .padding()
     }
 
