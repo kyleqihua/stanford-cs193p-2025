@@ -18,13 +18,13 @@ struct MatchMarkers: View {
 
     var body: some View {
         HStack {
-            VStack {
-                matchMarker(peg: 0)
-                matchMarker(peg: 1)
-            }
-            VStack {
-                matchMarker(peg: 2)
-                matchMarker(peg: 3)
+            ForEach(0..<(matches.count + 1) / 2, id: \.self) { col in
+                VStack {
+                    matchMarker(peg: col * 2)
+                    if col * 2 + 1 < matches.count {
+                        matchMarker(peg: col * 2 + 1)
+                    }
+                }
             }
         }
     }
