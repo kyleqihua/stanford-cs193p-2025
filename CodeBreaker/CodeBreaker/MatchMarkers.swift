@@ -44,7 +44,7 @@ struct MatchMarkersPreview: View {
 
     var body: some View {
         HStack {
-            ForEach(0..<4, id: \.self) { _ in
+            ForEach(0..<matches.count, id: \.self) { _ in
                 Circle().fill(.primary)
             }
             MatchMarkers(matches: matches)
@@ -53,6 +53,15 @@ struct MatchMarkersPreview: View {
 }
 
 #Preview {
-    MatchMarkersPreview(matches: [.exact, .inexact, .nomatch, .exact])
-        .frame(height: 50)
+    VStack(alignment: .leading) {
+        MatchMarkersPreview(matches: [.exact, .inexact, .nomatch])
+            .frame(height: 50)
+        MatchMarkersPreview(matches: [.exact, .inexact, .nomatch, .exact])
+            .frame(height: 50)
+        MatchMarkersPreview(matches: [.exact, .inexact, .exact, .nomatch, .exact])
+            .frame(height: 50)
+        MatchMarkersPreview(matches: [.exact, .inexact, .exact, .inexact, .nomatch, .exact])
+            .frame(height: 50)
+    }
+    .padding()
 }
