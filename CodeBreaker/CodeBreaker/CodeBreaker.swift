@@ -16,7 +16,7 @@ struct CodeBreaker {
     let pegChoices: [Peg] = [.red, .green, .blue, .yellow]
 
     func changeGuessPeg(at index: Int) {
-
+        let existingPeg = guess.pegs[index]
     }
 }
 
