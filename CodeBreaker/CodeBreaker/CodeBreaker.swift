@@ -2,27 +2,28 @@
 //  CodeBreaker.swift
 //  CodeBreaker
 //
-//  Created by kyle qihua  on 12/10/25.
+//  Created by CS193p Instructor on 4/9/25.
 //
 
 import SwiftUI
 
+typealias Peg = Color
+
 struct CodeBreaker {
-    var masterCode: Code = Code(pegs: [], kind: .master)
-    var guess: Code = Code(pegs: [], kind: .guess)
+    var masterCode: Code = Code(kind: .master)
+    var guess: Code = Code(kind: .guess)
     var attempts: [Code] = []
-    let pegChoices: [Peg] = [.red, .orange, .yellow, .green, .blue, .purple]
+    let pegChoices: [Peg] = [.red, .green, .blue, .yellow]
 }
 
 struct Code {
-    var pegs: [Peg]
     var kind: Kind
+    var pegs: [Peg] = [.green, .red, .red, .yellow]
 
     enum Kind {
         case master
         case guess
         case attempt
+        case unknown
     }
 }
-
-typealias Peg = Color
