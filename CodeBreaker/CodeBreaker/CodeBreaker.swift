@@ -15,7 +15,7 @@ struct CodeBreaker {
     var attempts: [Code] = []
     let pegChoices: [Peg] = [.red, .green, .blue, .yellow]
 
-    func changeGuessPeg(at index: Int) {
+    mutating func changeGuessPeg(at index: Int) {
         let existingPeg = guess.pegs[index]
         if let indexOfExistingPegInPegChoices = pegChoices.firstIndex(of: existingPeg) {
             let newPeg = pegChoices[(indexOfExistingPegInPegChoices + 1) % pegChoices.count]
