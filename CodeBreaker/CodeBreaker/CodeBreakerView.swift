@@ -19,13 +19,16 @@ struct CodeBreakerView: View {
                     view(for: game.attempts[index])
                 }
             }
-            Button("Guess") {
-                withAnimation {
-                    game.attemptGuess()
-                }
-            }
         }
         .padding()
+    }
+
+    var guessButton: some View {
+        Button("Guess") {
+            withAnimation {
+                game.attemptGuess()
+            }
+        }
     }
 
     func view(for code: Code) -> some View {
@@ -40,7 +43,7 @@ struct CodeBreakerView: View {
                         }
                     }
             }
-            MatchMarkers(matches: code.match(against: game.masterCode))
+            MatchMarkers(matches: code.matches)
         }
     }
 }
