@@ -20,7 +20,9 @@ struct CodeBreakerView: View {
                 }
             }
             Button("Guess") {
-                game.attemptGuess()
+                withAnimation {
+                    game.attemptGuess()
+                }
             }
         }
         .padding()
