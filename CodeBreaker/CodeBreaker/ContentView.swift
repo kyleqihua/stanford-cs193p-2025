@@ -24,10 +24,8 @@ struct ContentView: View {
     var body: some View {
         VStack {
             pegs(colors: game.pegChoices)
-            pegs(colors: [.blue, .blue, .red, .red])
-            pegs(colors: [.red, .yellow, .green, .blue])
         }
-        .padding()   
+        .padding()
     }
 }
 
