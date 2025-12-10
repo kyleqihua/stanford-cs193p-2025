@@ -14,6 +14,10 @@ struct CodeBreaker {
     var guess: Code = Code(kind: .guess)
     var attempts: [Code] = []
     let pegChoices: [Peg] = [.red, .green, .blue, .yellow]
+
+    func changeGuessPeg(at index: Int) {
+
+    }
 }
 
 struct Code {
