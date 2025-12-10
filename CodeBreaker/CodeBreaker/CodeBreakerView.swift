@@ -14,7 +14,9 @@ struct CodeBreakerView: View {
         VStack {
             view(for: game.masterCode)
             view(for: game.guess)
-//                pegs(colors: game.attempts[0].pegs)
+            ForEach(game.attempts.indices, id: \.self) { index in
+                view(for: game.attempts[index])
+            }
         }
         .padding()
     }
@@ -25,6 +27,11 @@ struct CodeBreakerView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .aspectRatio(1, contentMode: .fit)
                     .foregroundStyle(code.pegs[index])
+                    .onTapGesture {
+                        if code.kind == .guess {
+                            game.changeGuessPeg(at: index)
+                        }
+                    }
             }
             MatchMarkers(matches: [.exact, .inexact, .nomatch, .exact])
         }
