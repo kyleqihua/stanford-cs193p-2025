@@ -8,10 +8,10 @@
 import SwiftUICore
 
 struct CodeBreaker {
-    var masterCode: Code
-    var guess: Code
-    var attempts: [Code]
-    let pegChoices: [Peg]
+    var masterCode: Code = Code(pegs: [], kind: .master)
+    var guess: Code = Code(pegs: [], kind: .guess)
+    var attempts: [Code] = []
+    let pegChoices: [Peg] = [.red, .orange, .yellow, .green, .blue, .purple]
 }
 
 struct Code {
