@@ -17,7 +17,7 @@ struct CodeBreaker {
 
     mutating func attemptGuess() {
         var attempt = guess
-        attempt.kind = .attempt
+        attempt.kind = .attempt(attempt.match(against: masterCode))
         attempts.append(attempt)
     }
 
@@ -38,10 +38,17 @@ struct Code {
 
     static let missing: Peg = .clear
 
+    var matches: [Match] {
+        switch kind {
+        case .attempt(let matches): return matches
+        default: return []
+        }
+    }
+
     enum Kind {
         case master
         case guess
-        case attempt
+        case attempt([Match])
         case unknown
     }
 
