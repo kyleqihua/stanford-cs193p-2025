@@ -20,11 +20,14 @@ struct CodeBreaker {
         if let indexOfExistingPegInPegChoices = pegChoices.firstIndex(of: existingPeg) {
             let newPeg = pegChoices[(indexOfExistingPegInPegChoices + 1) % pegChoices.count]
             guess.pegs[index] = newPeg
+        } else {
+            guess.pegs[index] = pegChoices.first ?? Code.missing
         }
     }
 }
 
 struct Code {
+    static let missing: Peg = .clear
     var kind: Kind
     var pegs: [Peg] = [.green, .red, .red, .yellow]
 
