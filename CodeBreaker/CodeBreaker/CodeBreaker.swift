@@ -45,7 +45,7 @@ struct Code {
         }
     }
 
-    enum Kind {
+    enum Kind: Equatable {
         case master
         case guess
         case attempt([Match])
