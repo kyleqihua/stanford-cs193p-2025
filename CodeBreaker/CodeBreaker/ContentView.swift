@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    var game = CodeBreaker()
 
     func pegs(colors: Array<Color>) -> some View {
         HStack {

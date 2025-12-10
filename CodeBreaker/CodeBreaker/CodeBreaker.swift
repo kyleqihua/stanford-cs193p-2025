@@ -5,7 +5,7 @@
 //  Created by kyle qihua  on 12/10/25.
 //
 
-import SwiftUICore
+import SwiftUI
 
 struct CodeBreaker {
     var masterCode: Code = Code(pegs: [], kind: .master)
