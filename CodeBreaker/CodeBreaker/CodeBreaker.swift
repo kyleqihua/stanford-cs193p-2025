@@ -5,7 +5,7 @@
 //  Created by kyle qihua  on 12/10/25.
 //
 
-import Foundation
+import SwiftUICore
 
 struct CodeBreaker {
     var masterCode: Code
