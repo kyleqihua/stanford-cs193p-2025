@@ -14,7 +14,7 @@ struct CodeBreakerView: View {
         VStack {
             view(for: game.masterCode)
             view(for: game.guess)
-            ForEach(game.attempts.indices, id: \.self) { index in
+            ForEach(game.attempts.indices.reversed(), id: \.self) { index in
                 view(for: game.attempts[index])
             }
             Button("Guess") {
