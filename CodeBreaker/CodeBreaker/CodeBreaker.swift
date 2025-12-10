@@ -17,6 +17,7 @@ struct CodeBreaker {
 
     func changeGuessPeg(at index: Int) {
         let existingPeg = guess.pegs[index]
+        let indexOfExistingPegInPegChoices = pegChoices.firstIndex(of: existingPeg)
     }
 }
 
