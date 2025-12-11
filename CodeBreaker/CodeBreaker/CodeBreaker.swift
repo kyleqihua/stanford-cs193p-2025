@@ -34,7 +34,7 @@ struct CodeBreaker {
 
 struct Code {
     var kind: Kind
-    var pegs: [Peg] = [.green, .red, .red, .yellow]
+    var pegs: [Peg] = Array(repeating: Code.missing, count: 4)
 
     static let missing: Peg = .clear
 
