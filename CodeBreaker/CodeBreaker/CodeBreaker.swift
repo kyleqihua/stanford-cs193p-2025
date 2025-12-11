@@ -15,6 +15,11 @@ struct CodeBreaker {
     var attempts: [Code] = []
     let pegChoices: [Peg] = [.red, .green, .blue, .yellow]
 
+    init() {
+        masterCode.randomize(from: pegChoices)
+        print(masterCode)
+    }
+
     mutating func attemptGuess() {
         var attempt = guess
         attempt.kind = .attempt(attempt.match(against: masterCode))
