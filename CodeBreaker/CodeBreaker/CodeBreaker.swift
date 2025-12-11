@@ -52,6 +52,12 @@ struct Code {
         case unknown
     }
 
+    mutating func randomize(from pegChoices: [Peg]) {
+        for index in pegs.indices {
+            pegs[index] = pegChoices.randomElement() ?? Code.missing
+        }
+    }
+
     func match(against otherCode: Code) -> [Match] {
         var results: [Match] = Array(repeating: .nomatch, count: pegs.count)
         var pegsToMatch = otherCode.pegs

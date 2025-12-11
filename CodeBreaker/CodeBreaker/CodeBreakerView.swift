@@ -39,13 +39,21 @@ struct CodeBreakerView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .aspectRatio(1, contentMode: .fit)
                     .foregroundStyle(code.pegs[index])
+                    .contentShape(Rectangle())
                     .onTapGesture {
                         if code.kind == .guess {
                             game.changeGuessPeg(at: index)
                         }
                     }
             }
-            MatchMarkers(matches: code.matches)
+            Color.clear.aspectRatio(1, contentMode: .fit)
+                .overlay {
+                    if code.kind == .guess {
+                        guessButton
+                    } else {
+                        MatchMarkers(matches: code.matches)
+                    }
+                }
         }
     }
 }
