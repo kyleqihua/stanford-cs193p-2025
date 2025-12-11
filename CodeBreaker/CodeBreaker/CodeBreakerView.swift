@@ -29,6 +29,8 @@ struct CodeBreakerView: View {
                 game.attemptGuess()
             }
         }
+        .font(.system(size: 80))
+        .minimumScaleFactor(0.1)
     }
 
     func view(for code: Code) -> some View {
