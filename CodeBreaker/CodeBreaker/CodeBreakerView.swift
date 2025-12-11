@@ -39,6 +39,12 @@ struct CodeBreakerView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .aspectRatio(1, contentMode: .fit)
                     .foregroundStyle(code.pegs[index])
+                    .overlay {
+                        if code.pegs[index] == Code.missing {
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.gray)
+                        }
+                    }
                     .contentShape(Rectangle())
                     .onTapGesture {
                         if code.kind == .guess {
