@@ -13,9 +13,10 @@ struct CodeBreaker {
     var masterCode: Code = Code(kind: .master)
     var guess: Code = Code(kind: .guess)
     var attempts: [Code] = []
-    let pegChoices: [Peg] = [.red, .green, .blue, .yellow]
+    let pegChoices: [Peg]
 
-    init() {
+    init(pegChoices: [Peg] = [.red, .green, .blue, .yellow]) {
+        self.pegChoices = pegChoices
         masterCode.randomize(from: pegChoices)
         print(masterCode)
     }
