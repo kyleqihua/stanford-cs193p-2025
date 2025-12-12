@@ -33,16 +33,16 @@ struct CodeBreaker {
             let newPeg = pegChoices[(indexOfExistingPegInPegChoices + 1) % pegChoices.count]
             guess.pegs[index] = newPeg
         } else {
-            guess.pegs[index] = pegChoices.first ?? Code.missing
+            guess.pegs[index] = pegChoices.first ?? Code.missingPeg
         }
     }
 }
 
 struct Code {
     var kind: Kind
-    var pegs: [Peg] = Array(repeating: Code.missing, count: 4)
+    var pegs: [Peg] = Array(repeating: Code.missingPeg, count: 4)
 
-    static let missing: Peg = .clear
+    static let missingPeg: Peg = .clear
 
     var matches: [Match]? {
         switch kind {
@@ -60,7 +60,7 @@ struct Code {
 
     mutating func randomize(from pegChoices: [Peg]) {
         for index in pegs.indices {
-            pegs[index] = pegChoices.randomElement() ?? Code.missing
+            pegs[index] = pegChoices.randomElement() ?? Code.missingPeg
         }
     }
 
