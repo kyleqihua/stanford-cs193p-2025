@@ -11,6 +11,9 @@ struct CodeBreakerView: View {
     // MARK: Data Owned by Me
     @State private var game = CodeBreaker(pegChoices: [.brown, .yellow, .orange, .black])
 
+    // MARK: Data in
+    var selection: Int = 0
+    
     // MARK: - Body
     
     var body: some View {
@@ -31,7 +34,7 @@ struct CodeBreakerView: View {
         HStack {
             ForEach(game.pegChoices, id: \.self) { peg in
                 Button {
-                    game.setGuessPeg(at: selection, to: peg)
+                    game.setGuessPeg(peg, at: selection)
                 } label: {
                     PegView(peg: peg)
                 }
