@@ -54,6 +54,13 @@ struct CodeBreakerView: View {
         HStack {
             ForEach(code.pegs.indices, id: \.self) { index in
                 PegView(peg: code.pegs[index])
+                    .padding(5)
+                    .background {
+                        if selection == index, code.kind == .guess {
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundStyle(.gray)
+                        }
+                    }
                     .onTapGesture {
                         if code.kind == .guess {
                             selection = index
