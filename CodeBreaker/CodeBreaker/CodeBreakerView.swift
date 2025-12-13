@@ -22,8 +22,21 @@ struct CodeBreakerView: View {
                     view(for: game.attempts[index])
                 }
             }
+            pegChooser
         }
         .padding()
+    }
+
+    var pegChooser: some View {
+        HStack {
+            ForEach(game.pegChoices, id: \.self) { peg in
+                Button {
+                    game.setGuessPeg(at: selection, to: peg)
+                } label: {
+                    PegView(peg: peg)
+                }
+            }
+        }
     }
 
     var guessButton: some View {
