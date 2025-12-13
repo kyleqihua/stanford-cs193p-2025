@@ -9,7 +9,9 @@
 import SwiftUI
 
 struct Code {
+    // MARK: Data In
     var kind: Kind
+    
     var pegs: [Peg] = Array(repeating: Code.missingPeg, count: 4)
 
     static let missingPeg: Peg = .clear

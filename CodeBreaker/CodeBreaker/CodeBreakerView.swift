@@ -10,9 +10,7 @@ import SwiftUI
 struct CodeBreakerView: View {
     // MARK: Data Owned by Me
     @State private var game = CodeBreaker(pegChoices: [.brown, .yellow, .orange, .black])
-
-    // MARK: Data in
-    var selection: Int = 0
+    @State private var selection = 0
     
     // MARK: - Body
     
@@ -58,7 +56,7 @@ struct CodeBreakerView: View {
                 PegView(peg: code.pegs[index])
                     .onTapGesture {
                         if code.kind == .guess {
-                            game.changeGuessPeg(at: index)
+                            selection = index
                         }
                     }
             }
