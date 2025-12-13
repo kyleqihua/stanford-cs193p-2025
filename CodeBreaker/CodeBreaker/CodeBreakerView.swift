@@ -58,7 +58,7 @@ struct CodeBreakerView: View {
                     .background {
                         if selection == index, code.kind == .guess {
                             RoundedRectangle(cornerRadius: 10)
-                                .foregroundStyle(.gray)
+                                .foregroundStyle(Color.gray(0.85))
                         }
                     }
                     .onTapGesture {
@@ -81,6 +81,13 @@ struct CodeBreakerView: View {
     }
 }
 
+extension Color {
+    static func gray(_ brightness: CGFloat) -> Color {
+        return Color(hue: 148/360, saturation: 0, brightness: brightness)
+    }
+}
+
 #Preview {
     CodeBreakerView()
 }
+
