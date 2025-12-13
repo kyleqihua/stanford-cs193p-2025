@@ -24,10 +24,17 @@ struct Code {
     }
 
     enum Kind: Equatable {
-        case master
+        case master(isHidden: Bool)
         case guess
         case attempt([Match])
         case unknown
+    }
+
+    var isHidden: Bool {
+        switch kind {
+        case .master(let isHidden): return isHidden
+        default: return false
+        }
     }
 
     mutating func randomize(from pegChoices: [Peg]) {
