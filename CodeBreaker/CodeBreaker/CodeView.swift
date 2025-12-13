@@ -42,6 +42,6 @@ struct CodeView: View {
     }    
 }
 
-#Preview {
-    CodeView(code: Code(kind: .guess))
-}
+// #Preview {
+//     CodeView()
+// }
