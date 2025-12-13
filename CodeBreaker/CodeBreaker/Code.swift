@@ -34,6 +34,10 @@ struct Code {
         }
     }
 
+    mutating func reset() {
+        pegs = Array(repeating: Code.missingPeg, count: 4)
+    }
+
     func match(against otherCode: Code) -> [Match] {
         var pegsToMatch = otherCode.pegs
         let backwardsExactMatches = pegs.indices.reversed().map { index in
